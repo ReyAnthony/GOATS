@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GOATS</string>
+    <string name="disconn">Déconnexion</string>
+    <string name="title_activity_listing">Liste des tickets</string>
+    <string name="title_activity_proprietes">Propriétés</string>
+    <string name="title_activity_ticket">Ticket</string>
+    <string name="title_activity_cloture">Cloture du ticket</string>
+    <string name="title_activity_login">GOATS</string>
+    <string name="cnx">Se connecter</string>
+    <string name="adresse_ip_du_serveur">Adresse IP du serveur</string>
+    <string name="login">Nom d\'utilisateur</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="mobile_app">GOATS - GLPI Open Android Ticket Service</string>
+    <string name="conserver_les_informations">Conserver les informations</string>
+    <string name="logo">logo</string>
+    <string name="informations_du_ticket_n_">&quot;Informations sur le ticket n°: &quot;</string>
+    <string name="nom_du_ticket">Nom du ticket :</string>
+    <string name="demandeur">Demandeur :</string>
+    <string name="date_crea">Date de création :</string>
+    <string name="cloture_du_ticket_n_">&quot;Fermeture du ticket n°: &quot;</string>
+    <string name="solution_du_ticket">solution du ticket</string>
+    <string name="finaliser_la_cloture">Confirmer la cloture</string>
+    <string name="update">Mise à jour</string>
+    <string name="date_mod">Date de dernière modification :</string>
+    <string name="close">Cloturer le ticket</string>
+    <string name="empty"/>
+    <string name="description">Description :</string>
+    <string name="id">ID :</string>
+    <string name="loading">Chargment en cours</string>
+    <string name="wait">Veuillez patienter</string>
+    <string name="ticket_closed">Ticket cloturé</string>
+    <string name="solution_please">Merci de renseigner la solution à ce problème</string>
+    <string name="fatal_error">Une erreur est survenue - Erreur Fatale</string>
+    <string name="non_fatal_error">Une erreur est survenue - Erreur Non Fatale</string>
+    <string name="app_message">Message de l\'application</string>
+    <string name="no_tickets">Pas de tickets à afficher</string>
+    <string name="new_tickets">Vous avez des tickets en attente</string>
+
+</resources>
