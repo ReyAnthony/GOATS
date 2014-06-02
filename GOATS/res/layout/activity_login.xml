@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="Rev: 0"
+        android:text="Rev N° Not implemented yet"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>

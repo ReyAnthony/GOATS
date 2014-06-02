@@ -29,6 +29,7 @@ package fr.anthonyrey.activities;
 import org.xmlrpc.android.XMLRPCException;
 
 import fr.anthonyrey.connector.*;
+import fr.anthonyrey.error.FatalError;
 import fr.anthonyrey.error.NonFatalError;
 import fr.glpi.mobile.R;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -110,50 +112,62 @@ public class Login extends Activity{
 					buttonSubmit.setClickable(false);
 					// When clicked we are creating a new GLPI Ctor with the value we gave to the program
 					glpi = new GlpiConnector(champIp.getText().toString(),champLogin.getText().toString() ,champPwd.getText().toString());
-					//TODO GlpiConnector.resetNbTickets();
+					//TODO GlpiConnector.resetNbTickets(); 
 					
 					Thread t = new Thread(new Runnable(){
 						
 						public void run(){
 							
 								try {
+									
+										glpi.setSessionAccordingToInfos();
+										
+										// We put the infos in an array
+										String infosLogin[] = {champIp.getText().toString(),champLogin.getText().toString(),champPwd.getText().toString(), glpi.getSession()};
 								
-									glpi.setSessionAccordingToInfos();
-									
-									// We put the infos in an array
-									String infosLogin[] = {champIp.getText().toString(),champLogin.getText().toString(),champPwd.getText().toString(), glpi.getSession()};
-							
-									if(credentialBox.isChecked()){
+										if(credentialBox.isChecked()){
+											
+											//We fill the config file
+											//Remember that the connexion must work to get here (look at the try catch)
+											//We can't put anything in the file
+											prefsEditor.putString("ip", champIp.getText().toString());
+											prefsEditor.putString("login", champLogin.getText().toString());
+											
+										}else{
+											
+											// Otherwize we wipe it
+											prefsEditor.clear(); 
+										}
 										
-										//We fill the config file
-										//Remember that the connexion must work to get here (look at the try catch)
-										//We can't put anything in the file
-										prefsEditor.putString("ip", champIp.getText().toString());
-										prefsEditor.putString("login", champLogin.getText().toString());
+										// Anyway we are commiting the results
+										prefsEditor.commit();
 										
-									}else{
 										
-										// Otherwize we wipe it
-										prefsEditor.clear(); 
-									}
-									
-									// Anyway we are commiting the results
-									prefsEditor.commit();
-									
-									
-									// Background service gets initialized 
-									Intent backgroundService = new Intent(Login.this, BackgroundService.class);
-									backgroundService.putExtra("infosLogin", infosLogin);
-									startService(backgroundService);
-									
-									
-									Intent intent = new Intent(Login.this, Listing.class);
-									// We give the infos in an intent
-									intent.putExtra("infosLogin", infosLogin);
-									startActivity(intent); 
-									
-									//This activity get closed
-									finish();
+										if (!glpi.versionCheck()){
+											runOnUiThread(new Runnable(){
+												
+												public void run(){
+													
+													new FatalError(getResources().getString(R.string.incorrect_ver), Login.this);
+													
+														
+												}
+											});
+										}else {
+											// Background service gets initialized 
+											Intent backgroundService = new Intent(Login.this, BackgroundService.class);
+											backgroundService.putExtra("infosLogin", infosLogin);
+											startService(backgroundService);
+											
+											
+											Intent intent = new Intent(Login.this, Listing.class);
+											// We give the infos in an intent
+											intent.putExtra("infosLogin", infosLogin);
+											startActivity(intent); 
+											
+											//This activity get closed
+											finish();
+										}
 							
 								}
 								catch(XMLRPCException e){
