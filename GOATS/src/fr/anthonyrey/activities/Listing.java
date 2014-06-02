@@ -61,6 +61,7 @@ public class Listing extends ListActivity{
 	private ProgressDialog pDialog;
 	private Thread t;
 
+	private String ticketsToShow = null;  
 	
 	
 	
@@ -82,7 +83,8 @@ public class Listing extends ListActivity{
 			
         }
         else{ 
-     	
+        	
+        	ticketsToShow = getIntent().getStringExtra("typeTk");
         	pDialog = ProgressDialog.show(Listing.this, getResources().getString(R.string.loading), getResources().getString(R.string.wait), true, false);
         	
 			t = new Thread(new Runnable(){
@@ -93,8 +95,14 @@ public class Listing extends ListActivity{
 							
 			        		glpi = new GlpiConnector(infosLogin[0],infosLogin[1],infosLogin[2],infosLogin[3]);
 			        		
-			    			// On prends tout les tickets qui concernent l'agent loggu�
-			    			glpi.addTicketsToList();
+			        		if(ticketsToShow == null){
+			        			glpi.addTicketsToList();
+			        			
+			        		}else if(ticketsToShow.contains("ClotureTk")){
+			        			
+			        			glpi.addClosedTicketsToList();
+			        		}
+			        		
 			    			nbTickets =  GlpiConnector.getNbTickets();
 			    			
 			    			//pour pouvoir afficher l'erreur
@@ -125,25 +133,26 @@ public class Listing extends ListActivity{
 									listView = getListView();
 									listView.setTextFilterEnabled(true);
 									
-									
-									// Puis on lui met un listener 
-									listView.setOnItemClickListener(new OnItemClickListener() {
-										public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-							
-											// Qui va renvoyer vers la page Ticket
-										    Intent intent = new Intent(Listing.this, InfosTicket.class); 
-										    // Tout en lui passant les infos voulues
-											intent.putExtra("infosLogin", getIntent().getStringArrayExtra("infosLogin"));
-											// On passe l'id GLPI du ticket à recuperer
-											intent.putExtra("clickedTicket", listeId[position]);								 
-											startActivity(intent); 
-
-										}
+									if(ticketsToShow == null){
 										
-										
-							
-									});
-									
+										// Puis on lui met un listener 
+										listView.setOnItemClickListener(new OnItemClickListener() {
+											public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+								
+												// Qui va renvoyer vers la page Ticket
+											    Intent intent = new Intent(Listing.this, InfosTicket.class); 
+											    // Tout en lui passant les infos voulues
+												intent.putExtra("infosLogin", getIntent().getStringArrayExtra("infosLogin"));
+												// On passe l'id GLPI du ticket à recuperer
+												intent.putExtra("clickedTicket", listeId[position]);								 
+												startActivity(intent); 
+	
+											}
+											
+											
+								
+										});
+									}
 									pDialog.dismiss();
 									// On teste si y'a des tickets
 									testTicket();
@@ -224,6 +233,8 @@ public class Listing extends ListActivity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         	
+    	   Intent intent;
+    	   
     		switch(item.getItemId()){
     			
     		case R.id.disconn:
@@ -234,13 +245,23 @@ public class Listing extends ListActivity{
     		    android.os.Process.killProcess(android.os.Process.myPid());
     			break;
     		
-    		case R.id.update:
+    		case R.id.my_tickets:
     			
     			// On la recharge
-			    Intent intent = new Intent(Listing.this, Listing.class); 
+			    intent = new Intent(Listing.this, Listing.class); 
 				intent.putExtra("infosLogin", getIntent().getStringArrayExtra("infosLogin"));
-				intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-				
+				intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);	
+				startActivity(intent);
+    			finish();
+    			break;
+    			
+    		case R.id.closed_tickets:
+    			
+    			// On la recharge
+			    intent = new Intent(Listing.this, Listing.class); 
+				intent.putExtra("infosLogin", getIntent().getStringArrayExtra("infosLogin"));
+				intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);	
+				intent.putExtra("typeTk", "ClotureTk");
 				startActivity(intent);
     			finish();
     			break;

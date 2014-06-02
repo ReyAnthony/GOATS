@@ -37,5 +37,7 @@
     <string name="app_message">Message de l\'application</string>
     <string name="no_tickets">Pas de tickets à afficher</string>
     <string name="new_tickets">Vous avez des tickets en attente</string>
+        <string name="my_tickets">Mes tickets</string>
+    <string name="closed_tickets">Tickets cloturés</string>
 
 </resources>

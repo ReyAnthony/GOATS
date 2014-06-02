@@ -29,6 +29,7 @@ public final class R {
         public static final int boutonCloture=0x7f080010;
         public static final int button1=0x7f080006;
         public static final int buttonSubmit=0x7f080002;
+        public static final int closed_tickets=0x7f080013;
         public static final int credentialBox=0x7f080007;
         public static final int dateCreaTicket=0x7f08000d;
         public static final int dateModTicket=0x7f08000e;
@@ -39,12 +40,12 @@ public final class R {
         public static final int infoNumTicket=0x7f080000;
         public static final int ipBox=0x7f080003;
         public static final int logBox=0x7f080004;
+        public static final int my_tickets=0x7f080012;
         public static final int nomTicket=0x7f08000b;
         public static final int pwdBox=0x7f080005;
         public static final int solutionText=0x7f080001;
         public static final int textView1=0x7f080008;
         public static final int textView2=0x7f08000a;
-        public static final int update=0x7f080012;
     }
     public static final class layout {
         public static final int activity_cloture=0x7f030000;
@@ -60,6 +61,7 @@ public final class R {
         public static final int app_message=0x7f050021;
         public static final int app_name=0x7f050000;
         public static final int close=0x7f050017;
+        public static final int closed_tickets=0x7f050025;
         public static final int cloture_du_ticket_n_=0x7f050012;
         public static final int cnx=0x7f050007;
         public static final int conserver_les_informations=0x7f05000c;
@@ -78,6 +80,7 @@ public final class R {
         public static final int logo=0x7f05000d;
         public static final int mobile_app=0x7f05000b;
         public static final int mot_de_passe=0x7f05000a;
+        public static final int my_tickets=0x7f050024;
         public static final int new_tickets=0x7f050023;
         public static final int no_tickets=0x7f050022;
         public static final int nom_du_ticket=0x7f05000f;
