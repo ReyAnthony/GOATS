@@ -39,5 +39,6 @@
     <string name="new_tickets">There are some tickets waiting</string>
     <string name="my_tickets">My tickets</string>
     <string name="closed_tickets">Closed tickets</string>
+    <string name="incorrect_ver">GLPI and/or Webservices version is not correct, please check that you are using GLPI 0.84.X and Webservices 1.4.0/1.4.1</string>
 
 </resources>

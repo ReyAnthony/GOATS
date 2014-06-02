@@ -74,6 +74,7 @@ public final class R {
         public static final int fatal_error=0x7f05001f;
         public static final int finaliser_la_cloture=0x7f050014;
         public static final int id=0x7f05001a;
+        public static final int incorrect_ver=0x7f050026;
         public static final int informations_du_ticket_n_=0x7f05000e;
         public static final int loading=0x7f05001b;
         public static final int login=0x7f050009;

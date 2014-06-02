@@ -153,6 +153,30 @@ public class GlpiConnector
 
 	}
 	
+	/**
+	 * 
+	 * Check the version of Webservice and GLPI
+	 * 
+	 * @return true if Webservice and GLPI are at the right versions
+	 * @throws XMLRPCException
+	 */
+	public boolean versionCheck() throws XMLRPCException 
+	{
+	  	        	 
+    	HashMap<String, String> params = new HashMap<String, String>();	
+    	@SuppressWarnings({ "rawtypes" })
+		HashMap data = (HashMap) client.call("glpi.test", params);
+    	
+	 	if(data.get("glpi").toString().contains("0.84") && data.get("webservices").toString().matches("1.4.0") || data.get("webservices").toString().matches("1.4.1") ){
+	 		
+	 		return true;
+	 		
+	 	}else{
+
+	 		return false;
+	 	}
+	}
+	
 
 	
 	/**

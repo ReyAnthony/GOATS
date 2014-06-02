@@ -37,7 +37,8 @@
     <string name="app_message">Message de l\'application</string>
     <string name="no_tickets">Pas de tickets à afficher</string>
     <string name="new_tickets">Vous avez des tickets en attente</string>
-        <string name="my_tickets">Mes tickets</string>
+    <string name="my_tickets">Mes tickets</string>
     <string name="closed_tickets">Tickets cloturés</string>
+    <string name="incorrect_ver">La version de GLPI et / ou de Webservice est incorrecte, vous devez utiliser GLPI 0.84.X et Webservices 1.4.0/1.4.1</string>
 
 </resources>
