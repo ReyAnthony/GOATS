@@ -5,11 +5,7 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/disconn"/>
-    
-    <item
-        android:id="@+id/update"
-        android:orderInCategory="200"
-        android:showAsAction="never"
-        android:title="@string/update"/>
+    <item android:id="@+id/my_tickets" android:title="@string/my_tickets"></item>
+    <item android:id="@+id/closed_tickets" android:title="@string/closed_tickets"></item>
 
 </menu>

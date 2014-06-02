@@ -224,6 +224,36 @@ public class GlpiConnector
 		
 	}
 	
+	public void addClosedTicketsToList() throws XMLRPCException {
+		
+		HashMap<String, String> params = new HashMap<String, String>();
+    	params.put("session", session);
+    	params.put("order", "id");
+    	params.put("id2name", "");
+    	//sinon on a que 20 tickets qui s'affichent
+        params.put("limit", "25000" );
+        params.put("status", "5");
+    	
+    	
+
+		Object ob = client.call("glpi.listTickets", params);
+
+		Object liste[] = (Object[]) ob; // On met le resultat dans un tableaux 
+				
+		// On parse les hashmaps du tableau 
+		
+		for(Object obj : liste){ 
+			@SuppressWarnings("rawtypes")
+			HashMap parseResult = (HashMap) obj;
+						 			
+			list.add(new Tickets(Integer.parseInt(parseResult.get("id").toString()), parseResult.get("name").toString(), parseResult.get("content").toString(), parseResult.get("date").toString(), parseResult.get("date_mod").toString(), parseResult.get("users_name_recipient").toString(), parseResult.get("status").toString() ));
+	
+			
+		}
+		
+		nbTickets = list.size();
+		
+	}
 
 	
 	/**
