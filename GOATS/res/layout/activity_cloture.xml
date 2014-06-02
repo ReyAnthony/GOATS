@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Cloture" >
+
+    
+     <TextView
+        android:id="@+id/infoNumTicket"
+        android:gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+
+        android:text="@string/cloture_du_ticket_n_"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/solutionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSubmit"
+        android:layout_alignLeft="@+id/infoNumTicket"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/infoNumTicket"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/solution_du_ticket"
+        android:inputType="textMultiLine" >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/solutionText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/solutionText"
+        android:text="@string/finaliser_la_cloture" />
+
+</RelativeLayout>

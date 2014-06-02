@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fr.glpi.mobile"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+    <uses-permission 
+        android:name="android.permission.INTERNET"
+        />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/holo">
+
+      
+   
+        <activity
+            android:name="fr.anthonyrey.activities.InfosTicket"
+            android:label="@string/title_activity_ticket"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="fr.anthonyrey.activities.Listing"
+            android:label="@string/title_activity_listing"
+            android:screenOrientation="portrait">
+             
+         
+        </activity>
+        <activity
+            android:name="fr.anthonyrey.activities.Cloture"
+            android:label="@string/title_activity_cloture"
+             android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="fr.anthonyrey.activities.Login"
+            android:label="@string/title_activity_login" 
+            android:screenOrientation="portrait">
+           
+              <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+             	<category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        
+        <service
+            android:name="fr.anthonyrey.activities.BackgroundService"/>
+            
+    </application>
+
+</manifest>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GOATS</string>
+    <string name="disconn">Disconnect</string>
+    <string name="title_activity_listing">Tickets listing</string>
+    <string name="title_activity_proprietes">Properties</string>
+    <string name="title_activity_ticket">Ticket</string>
+    <string name="title_activity_cloture">Ticket closing</string>
+    <string name="title_activity_login">GOATS</string>
+    <string name="cnx">Log in</string>
+    <string name="adresse_ip_du_serveur">Server IP</string>
+    <string name="login">Login</string>
+    <string name="mot_de_passe">Password</string>
+    <string name="mobile_app">GOATS - GLPI Open Android Ticket Service</string>
+    <string name="conserver_les_informations">Keep login informations</string>
+    <string name="logo">logo</string>
+    <string name="informations_du_ticket_n_">&quot;Informations about ticket n°: &quot;</string>
+    <string name="nom_du_ticket">Ticket name :</string>
+    <string name="demandeur">Asker :</string>
+    <string name="date_crea">Creation date :</string>
+    <string name="cloture_du_ticket_n_">&quot;Closing ticket n°: &quot;</string>
+    <string name="solution_du_ticket">ticket solution</string>
+    <string name="finaliser_la_cloture">Confirm closing</string>
+    <string name="update">Update</string>
+    <string name="date_mod">Last modification date :</string>
+    <string name="close">Close the ticket</string>
+    <string name="empty"/>
+    <string name="description">Description :</string>
+    <string name="id">ID :</string>
+    <string name="loading">Loading</string>
+    <string name="wait">Please wait</string>
+    <string name="ticket_closed">Ticket closed</string>
+    <string name="solution_please">Please give a solution to this problem</string>
+    <string name="fatal_error">There is a problem - Fatal Error</string>
+    <string name="non_fatal_error">There is a problem - Non Fatal Error</string>
+    <string name="app_message">Application Message</string>
+    <string name="no_tickets">No tickets to show</string>
+    <string name="new_tickets">There are some tickets waiting</string>
+
+</resources>
