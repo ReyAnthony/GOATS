@@ -103,7 +103,7 @@ public class Listing extends ListActivity{
 			        			glpi.addClosedTicketsToList();
 			        		}
 			        		
-			    			nbTickets =  GlpiConnector.getNbTickets();
+			    			nbTickets =  glpi.getTickets().size();
 			    			
 			    			//pour pouvoir afficher l'erreur
 							runOnUiThread(new Runnable(){

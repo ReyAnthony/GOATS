@@ -273,10 +273,7 @@ public class GlpiConnector
 			list.add(new Tickets(Integer.parseInt(parseResult.get("id").toString()), parseResult.get("name").toString(), parseResult.get("content").toString(), parseResult.get("date").toString(), parseResult.get("date_mod").toString(), parseResult.get("users_name_recipient").toString(), parseResult.get("status").toString() ));
 	
 			
-		}
-		
-		nbTickets = list.size();
-		
+		}		
 	}
 
 	
