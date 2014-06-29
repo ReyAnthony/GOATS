@@ -1,6 +1,6 @@
 /*
  	Tickets.java is part of :
-	GOATS, GLPI Open Android Ticket Service
+	GOATS, Greatly Open Android Ticket Service
     Copyright (C) 2014  Anthony REY
 
     This program is free software: you can redistribute it and/or modify
@@ -19,9 +19,7 @@
     
     By email at : 
     anthony.rey5@gmail.com
-    
-    By paper mail at :
-    Anthony Rey, 2 rue jean moulin, 95270, Viarmes, France
+
 */
 
 package fr.anthonyrey.connector;
