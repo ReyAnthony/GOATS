@@ -12,7 +12,7 @@
     <string name="adresse_ip_du_serveur">Adresse IP du serveur</string>
     <string name="login">Nom d\'utilisateur</string>
     <string name="mot_de_passe">Mot de passe</string>
-    <string name="mobile_app">GOATS - GLPI Open Android Ticket Service</string>
+    <string name="mobile_app">GOATS - Greatly Open Android Ticket Service</string>
     <string name="conserver_les_informations">Conserver les informations</string>
     <string name="logo">logo</string>
     <string name="informations_du_ticket_n_">&quot;Informations sur le ticket n°: &quot;</string>
